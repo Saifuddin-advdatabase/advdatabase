@@ -6,7 +6,7 @@ from bottle import get, post, template, request, redirect
 # are we executing at PythonAnywhere?
 ON_PYTHONANYWHERE = "PYTHONANYWHERE_DOMAIN" in os.environ
 
-# assert ON_PYTHONANYWHERE == True
+assert ON_PYTHONANYWHERE == True
 
 if ON_PYTHONANYWHERE:
     # on PA, set up to connect to the WSGI server
