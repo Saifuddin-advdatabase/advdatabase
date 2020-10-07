@@ -20,23 +20,45 @@ else:
 def get_show_list():
     connection = sqlite3.connect("todo.db")
     cursor = connection.cursor()
-    cursor.execute("select * from todo")
+    #cursor.execute("select * from todo")
+    cursor.execute("select * from covid")
     result = cursor.fetchall()
     cursor.close()
-    return template("show_list", rows=result)
+    return template("intro", rows=result)
 
 
-@get("/new_item")
-def get_new_item():
-    return template("new_item")
+# @get("/new_symtoms")
+# def get_new_symtoms():
+#     return template("new_symtoms")
 
 
-@post("/new_item")
-def post_new_item():
-    new_item = request.forms.get("new_item").strip()
+# @post("/new_symtoms")
+# def post_new_symtoms():
+#     new_symtoms = request.forms.get("new_symtoms").strip()
+#     connection = sqlite3.connect("todo.db")
+#     cursor = connection.cursor()
+#     cursor.execute("insert into intro (symtoms) VALUES (?)", (new_symtoms))
+#     # cursor.lastrowid
+#     connection.commit()
+#     cursor.close()
+#     #return "The new item is [" + new_item + "]..."
+#     redirect("/")
+
+
+@get("/new_symtoms")
+def get_new_symtoms():
+    return template("new_symtoms")
+
+
+@post("/new_symtoms")
+def post_new_symtoms():
+    new_symtoms = request.forms.get("new_symtoms").strip()
     connection = sqlite3.connect("todo.db")
     cursor = connection.cursor()
-    cursor.execute("insert into todo (task, status) values (?,?)", (new_item, 1))
+    print(cursor)
+    #cursor.execute("INSERT INTO covid (symtoms) VALUES ('" + new_symtoms + "')")
+    #cursor.execute("INSERT INTO covid (symtoms) VALUES (?)", (new_symtoms,))
+    cursor.execute("INSERT INTO covid (symtoms) VALUES (?)", (new_symtoms,))
     # cursor.lastrowid
     connection.commit()
     cursor.close()
@@ -51,4 +73,3 @@ else:
     # on the development environment, run the development server
     debug(True)
     run(host='localhost', port=8080)
-
