@@ -8,4 +8,7 @@
     </tr>
 %end
 </table>
+
 <a href="/new_item">New Item...:=)</a>
+<a href="/new_item">Update Item...:=)</a>
+<a href="/new_item">Delete Item...:=)</a>

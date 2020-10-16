@@ -17,9 +17,7 @@ table.center {
     <body>
     <pre style="text-align:center">
 
-Dear Professor, Greeting from <b> Saifuddin Mahmud</b>. I am very lucky to be a student of this
-course. I am also greatful to you as you are doing a great job for us. I never get a chance to work
-       in the industry but I am feeling now. <b>This web application is for Homework 1.</b>
+<H1>This web application is for Homework 2.</H1>
 
 
       </pre>
@@ -34,7 +32,10 @@ course. I am also greatful to you as you are doing a great job for us. I never g
     </tr>
 %end
 </table>
+<br>
 <a href="/new_symtoms">New Symtoms...</a>
+<a href="/update_symtoms">Update Symtoms...</a>
+<a href="/delete_symtoms">Delete Symtoms...</a>
 </p>
     </body>
 </html>
